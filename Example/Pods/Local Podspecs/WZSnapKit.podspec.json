@@ -1,0 +1,35 @@
+{
+  "name": "WZSnapKit",
+  "version": "2.0.0",
+  "summary": "WZSnapKit布局框架",
+  "homepage": "https://git.lug.ustc.edu.cn/wzios/WZSnapKit",
+  "license": "MIT",
+  "authors": {
+    "xiaobin liu": "327847390@qq.com"
+  },
+  "source": {
+    "git": "https://git.lug.ustc.edu.cn/wzios/WZSnapKit.git",
+    "tag": "2.0.0"
+  },
+  "requires_arc": true,
+  "static_framework": true,
+  "swift_versions": "5.0",
+  "platforms": {
+    "ios": "9.0"
+  },
+  "default_subspecs": "Source",
+  "subspecs": [
+    {
+      "name": "Source",
+      "source_files": "WZSnapKit/Classes/*.swift"
+    },
+    {
+      "name": "Binary",
+      "vendored_frameworks": "Carthage/Build/iOS/Static/WZSnapKit.framework",
+      "user_target_xcconfig": {
+        "LIBRARY_SEARCH_PATHS": "$(TOOLCHAIN_DIR)/usr/lib/swift/$(PLATFORM_NAME)"
+      }
+    }
+  ],
+  "swift_version": "5.0"
+}

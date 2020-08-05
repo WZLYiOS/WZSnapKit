@@ -1,0 +1,18 @@
+PODS:
+  - WZSnapKit (2.0.0):
+    - WZSnapKit/Source (= 2.0.0)
+  - WZSnapKit/Source (2.0.0)
+
+DEPENDENCIES:
+  - WZSnapKit (from `../`)
+
+EXTERNAL SOURCES:
+  WZSnapKit:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  WZSnapKit: 67b9f5a82454166f10784c7b60f660d981e5abd6
+
+PODFILE CHECKSUM: 433ff034feb702ac3196553de0f04d24cba7e360
+
+COCOAPODS: 1.7.5

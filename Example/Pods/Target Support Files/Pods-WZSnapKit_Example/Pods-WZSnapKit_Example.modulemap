@@ -1,0 +1,6 @@
+framework module Pods_WZSnapKit_Example {
+  umbrella header "Pods-WZSnapKit_Example-umbrella.h"
+
+  export *
+  module * { export * }
+}

@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'WZSnapKit_Example' do
+  pod 'WZSnapKit', :path => '../'
+
+  target 'WZSnapKit_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
