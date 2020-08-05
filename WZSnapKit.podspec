@@ -2,7 +2,7 @@ Pod::Spec.new do |s|
   
   s.name             = 'WZSnapKit'
   s.version          = '2.0.0'
-  s.summary          = 'WZSnapKit布局框架'
+  s.summary          = 'WZSnapKit布局框架.'
   
   s.homepage         = 'https://github.com/WZLYiOS/WZSnapKit'
   s.license          = 'MIT'
