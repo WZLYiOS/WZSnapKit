@@ -1,18 +1,26 @@
 PODS:
-  - WZSnapKit (2.0.0):
-    - WZSnapKit/Source (= 2.0.0)
-  - WZSnapKit/Source (2.0.0)
+  - SnapKit (5.6.0)
+  - WZSnapKit (2.0.2):
+    - SnapKit (~> 5.6.0)
+    - WZSnapKit/Source (= 2.0.2)
+  - WZSnapKit/Source (2.0.2):
+    - SnapKit (~> 5.6.0)
 
 DEPENDENCIES:
   - WZSnapKit (from `../`)
+
+SPEC REPOS:
+  trunk:
+    - SnapKit
 
 EXTERNAL SOURCES:
   WZSnapKit:
     :path: "../"
 
 SPEC CHECKSUMS:
-  WZSnapKit: 67b9f5a82454166f10784c7b60f660d981e5abd6
+  SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
+  WZSnapKit: df75abb5366e5a4f977a6331f0db56a9b80adfda
 
 PODFILE CHECKSUM: 433ff034feb702ac3196553de0f04d24cba7e360
 
-COCOAPODS: 1.7.5
+COCOAPODS: 1.11.3
