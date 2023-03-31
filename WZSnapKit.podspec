@@ -1,7 +1,7 @@
 Pod::Spec.new do |s|
   
   s.name             = 'WZSnapKit'
-  s.version          = '2.0.3'
+  s.version          = '2.0.4'
   s.summary          = 'WZSnapKit布局框架.'
   
   s.homepage         = 'https://github.com/WZLYiOS/WZSnapKit'
@@ -14,7 +14,7 @@ Pod::Spec.new do |s|
   s.swift_version         = '5.0'
   s.ios.deployment_target = '11.0'
   s.default_subspec = 'Source'
-  s.dependency 'SnapKit', '~> 5.6.0'
+  s.dependency 'SnapKit'
   
   s.subspec 'Source' do |ss|
     ss.source_files = 'WZSnapKit/Classes/*.swift'
