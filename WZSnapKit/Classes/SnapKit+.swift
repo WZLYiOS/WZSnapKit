@@ -89,8 +89,10 @@ public struct ConstraintArrayDSL {
             let curWidth = min(determineWidths[i], maxW)
             v.snp.makeConstraints({ (make) in
                 make.width.equalTo(curWidth)
-                make.bottom.lessThanOrEqualTo(tempSuperview).offset(-edgeInset.bottom)
                 make.height.equalTo(itemHeight)
+                if i == self.array.count - 1 {
+                    make.bottom.equalTo(-edgeInset.bottom)
+                }
                 
                 if prev == nil { // the first one
                     let tmpTarget = topConstrainView != nil ? topConstrainView!.snp.bottom : tempSuperview.snp.top
