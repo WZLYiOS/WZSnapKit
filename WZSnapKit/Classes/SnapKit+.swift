@@ -75,7 +75,7 @@ public struct ConstraintArrayDSL {
                                               edgeInset: UIEdgeInsets = UIEdgeInsets.zero,
                                               topConstrainView: ConstraintView? = nil) {
         
-        guard self.array.count > 1, determineWidths.count == self.array.count, let tempSuperview = commonSuperviewOfViews() else {
+        guard self.array.count > 0, determineWidths.count == self.array.count, let tempSuperview = commonSuperviewOfViews() else {
             return
         }
         
@@ -135,7 +135,7 @@ public struct ConstraintArrayDSL {
                                      fixedItemLength: CGFloat? = nil,
                                      topConstrainView: ConstraintView? = nil) {
         
-        guard self.array.count > 1, let tempSuperview = commonSuperviewOfViews() else {
+        guard self.array.count > 0, let tempSuperview = commonSuperviewOfViews() else {
             return
         }
         
@@ -210,7 +210,7 @@ public struct ConstraintArrayDSL {
                                       itemHeight: CGFloat? = nil,
                                       topConstrainView: ConstraintView? = nil) {
         
-        guard self.array.count > 1, warpCount >= 1, let tempSuperview = commonSuperviewOfViews() else {
+        guard self.array.count > 0, warpCount >= 1, let tempSuperview = commonSuperviewOfViews() else {
             return
         }
         
