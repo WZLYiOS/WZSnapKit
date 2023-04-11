@@ -19,6 +19,20 @@ class ViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-
+    @IBAction func adaptiveExample(_ sender: UIButton) {
+        self.navigationController?.pushViewController(AdaptiveExampleViewController(), animated: true)
+    }
+    
+    @IBAction func verticalExample(_ sender: UIButton) {
+        self.navigationController?.pushViewController(VerticalExampleViewController(), animated: true)
+    }
+    
+    @IBAction func horizontalExample(_ sender: UIButton) {
+        self.navigationController?.pushViewController(HorizontalViewController(), animated: true)
+    }
+    
+    @IBAction func SudokuExample(_ sender: UIButton) {
+        self.navigationController?.pushViewController(SudokuExampleViewController(), animated: true)
+    }
 }
 

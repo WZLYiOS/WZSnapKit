@@ -208,6 +208,7 @@ public struct ConstraintArrayDSL {
                                       warpCount: Int,
                                       edgeInset: UIEdgeInsets = UIEdgeInsets.zero,
                                       itemHeight: CGFloat? = nil,
+                                      itemWidth: CGFloat? = nil,
                                       topConstrainView: ConstraintView? = nil) {
         
         guard self.array.count > 0, warpCount >= 1, let tempSuperview = commonSuperviewOfViews() else {
@@ -231,8 +232,11 @@ public struct ConstraintArrayDSL {
                 if currentRow == 0 {//fisrt row
                     let tmpTarget = topConstrainView != nil ? topConstrainView!.snp.bottom : tempSuperview.snp.top
                     make.top.equalTo(tmpTarget).offset(edgeInset.top)
-                    if itemHeight != nil {
-                        make.height.equalTo(itemHeight!)
+                    if let h = itemHeight {
+                        make.height.equalTo(h)
+                    }
+                    if let w = itemWidth {
+                        make.width.equalTo(w)
                     }
                 }
                 if currentRow == rowCount - 1 {//last row
@@ -259,7 +263,9 @@ public struct ConstraintArrayDSL {
                     if currentColumn != 0 {
                         make.left.equalTo(prev!.snp.right).offset(horizontalSpacing)
                     }
-                    make.right.equalTo(tempSuperview).offset(-edgeInset.right)
+                    if itemWidth == nil {
+                        make.right.equalTo(tempSuperview).offset(-edgeInset.right)
+                    }
                 }
                 
                 if currentColumn != 0 && currentColumn != warpCount - 1 {//other col

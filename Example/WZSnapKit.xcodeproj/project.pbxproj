@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		2867AEF329E50CAC004A37B3 /* HorizontalViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867AEE929E50CAC004A37B3 /* HorizontalViewController.swift */; };
+		2867AEF429E50CAC004A37B3 /* VerticalExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867AEEA29E50CAC004A37B3 /* VerticalExampleViewController.swift */; };
+		2867AEF529E50CAC004A37B3 /* SudokuExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867AEEB29E50CAC004A37B3 /* SudokuExampleViewController.swift */; };
+		2867AEF629E50CAC004A37B3 /* AdaptiveExampleViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867AEEC29E50CAC004A37B3 /* AdaptiveExampleViewController.swift */; };
+		2867AEFA29E50CAC004A37B3 /* String+Size.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2867AEF229E50CAC004A37B3 /* String+Size.swift */; };
 		5646521F96D2A7AC3D853D19 /* Pods_WZSnapKit_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E8449205304FD4374FD36902 /* Pods_WZSnapKit_Tests.framework */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
@@ -29,6 +34,11 @@
 
 /* Begin PBXFileReference section */
 		0F5942693445924816D7733B /* WZSnapKit.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = WZSnapKit.podspec; path = ../WZSnapKit.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		2867AEE929E50CAC004A37B3 /* HorizontalViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HorizontalViewController.swift; sourceTree = "<group>"; };
+		2867AEEA29E50CAC004A37B3 /* VerticalExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VerticalExampleViewController.swift; sourceTree = "<group>"; };
+		2867AEEB29E50CAC004A37B3 /* SudokuExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SudokuExampleViewController.swift; sourceTree = "<group>"; };
+		2867AEEC29E50CAC004A37B3 /* AdaptiveExampleViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AdaptiveExampleViewController.swift; sourceTree = "<group>"; };
+		2867AEF229E50CAC004A37B3 /* String+Size.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Size.swift"; sourceTree = "<group>"; };
 		4D9F242DFBC1F193D612B910 /* Pods-WZSnapKit_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WZSnapKit_Example.release.xcconfig"; path = "Target Support Files/Pods-WZSnapKit_Example/Pods-WZSnapKit_Example.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* WZSnapKit_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WZSnapKit_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -69,6 +79,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		2867AEE829E50CAC004A37B3 /* ExampleViewController */ = {
+			isa = PBXGroup;
+			children = (
+				2867AEE929E50CAC004A37B3 /* HorizontalViewController.swift */,
+				2867AEEA29E50CAC004A37B3 /* VerticalExampleViewController.swift */,
+				2867AEEB29E50CAC004A37B3 /* SudokuExampleViewController.swift */,
+				2867AEEC29E50CAC004A37B3 /* AdaptiveExampleViewController.swift */,
+			);
+			path = ExampleViewController;
+			sourceTree = "<group>";
+		};
+		2867AEF129E50CAC004A37B3 /* Extension */ = {
+			isa = PBXGroup;
+			children = (
+				2867AEF229E50CAC004A37B3 /* String+Size.swift */,
+			);
+			path = Extension;
+			sourceTree = "<group>";
+		};
 		29F303887A1084D9E0166673 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
@@ -102,6 +131,8 @@
 		607FACD21AFB9204008FA782 /* Example for WZSnapKit */ = {
 			isa = PBXGroup;
 			children = (
+				2867AEE829E50CAC004A37B3 /* ExampleViewController */,
+				2867AEF129E50CAC004A37B3 /* Extension */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
@@ -332,8 +363,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				2867AEF529E50CAC004A37B3 /* SudokuExampleViewController.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				2867AEF329E50CAC004A37B3 /* HorizontalViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				2867AEF429E50CAC004A37B3 /* VerticalExampleViewController.swift in Sources */,
+				2867AEFA29E50CAC004A37B3 /* String+Size.swift in Sources */,
+				2867AEF629E50CAC004A37B3 /* AdaptiveExampleViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
