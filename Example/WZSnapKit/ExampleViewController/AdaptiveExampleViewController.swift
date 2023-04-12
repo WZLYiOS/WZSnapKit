@@ -26,12 +26,24 @@ class AdaptiveExampleViewController: UIViewController {
         
         let label = UILabel()
         label.text = "自适应文字宽度的一堆button"
+        label.backgroundColor = UIColor.red
         self.view.addSubview(label)
         label.snp.makeConstraints { (make) in
             make.top.equalTo(120)
             make.left.equalTo(20)
             make.right.equalTo(-20)
         }
+       
+        let container = UIView()
+        container.backgroundColor = .yellow
+        self.view.addSubview(container)
+        container.snp.makeConstraints { (make) in
+            make.top.equalTo(label.snp.bottom).offset(10)
+            make.left.equalTo(20)
+            make.right.equalTo(-20)
+//            make.height.equalTo(200)
+        }
+        
         
         let textPadding: CGFloat = 10.0
         var btnArr: [UIButton] = []
@@ -43,7 +55,7 @@ class AdaptiveExampleViewController: UIViewController {
             btn.setTitle(textArr[i], for: .normal)
             btn.setTitleColor(.white, for: .normal)
             btn.backgroundColor = UIColor.red
-            self.view.addSubview(btn)
+            container.addSubview(btn)
             btnArr.append(btn)
             
             let btnW = textArr[i].size(withFont: (btn.titleLabel?.font)!).width + textPadding * 2

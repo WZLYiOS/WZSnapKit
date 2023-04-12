@@ -19,7 +19,7 @@ class SudokuExampleViewController: UIViewController {
         
         example1()
         
-//        example2()
+        example2()
     }
     
     private func example1() {
@@ -46,7 +46,7 @@ class SudokuExampleViewController: UIViewController {
         }
         
         var views: [UIView] = []
-        for _ in 0..<5{
+        for _ in 0..<1{
             let view = UIView()
             view.backgroundColor = .green
             container.addSubview(view)

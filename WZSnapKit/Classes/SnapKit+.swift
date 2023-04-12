@@ -75,7 +75,7 @@ public struct ConstraintArrayDSL {
                                               edgeInset: UIEdgeInsets = UIEdgeInsets.zero,
                                               topConstrainView: ConstraintView? = nil) {
         
-        guard self.array.count > 0, determineWidths.count == self.array.count, let tempSuperview = commonSuperviewOfViews() else {
+        guard self.array.count > 0, determineWidths.count == self.array.count, let tempSuperview = array.first?.superview else {
             return
         }
         
@@ -135,7 +135,7 @@ public struct ConstraintArrayDSL {
                                      fixedItemLength: CGFloat? = nil,
                                      topConstrainView: ConstraintView? = nil) {
         
-        guard self.array.count > 0, let tempSuperview = commonSuperviewOfViews() else {
+        guard self.array.count > 0, let tempSuperview = array.first?.superview else {
             return
         }
         
@@ -211,7 +211,7 @@ public struct ConstraintArrayDSL {
                                       itemWidth: CGFloat? = nil,
                                       topConstrainView: ConstraintView? = nil) {
         
-        guard self.array.count > 0, warpCount >= 1, let tempSuperview = commonSuperviewOfViews() else {
+        guard self.array.count > 0, warpCount >= 1, let tempSuperview = array.first?.superview else {
             return
         }
         
@@ -243,14 +243,14 @@ public struct ConstraintArrayDSL {
                     if currentRow != 0 && i - columnCount >= 0 {
                         make.top.equalTo(self.array[i-columnCount].snp.bottom).offset(verticalSpacing)
                     }
-                    if i == self.array.count - 1 {
-                        make.bottom.equalToSuperview().offset(-edgeInset.bottom)
-                    }else{
-                        make.bottom.lessThanOrEqualToSuperview().offset(-edgeInset.bottom)
+                    
+                    if itemHeight != nil {
+                        make.bottom.lessThanOrEqualTo(tempSuperview).offset(-edgeInset.bottom)
+                    }
+                    else {
+                        make.bottom.equalTo(tempSuperview).offset(-edgeInset.bottom)
                     }
                 }
-                
-                
                 
                 if currentRow != 0 && currentRow != rowCount - 1 {//other row
                     make.top.equalTo(self.array[i-columnCount].snp.bottom).offset(verticalSpacing);
@@ -288,37 +288,37 @@ public struct ConstraintArrayDSL {
     }
 }
 
-private extension ConstraintArrayDSL {
-    func commonSuperviewOfViews() -> ConstraintView? {
-        var commonSuperview : ConstraintView?
-        var previousView : ConstraintView?
-        
-        for view in self.array {
-            if previousView != nil {
-                commonSuperview = view.closestCommonSuperview(commonSuperview)
-            }else {
-                commonSuperview = view
-            }
-            previousView = view
-        }
-        return commonSuperview
-    }
-}
-
-private extension ConstraintView {
-    func closestCommonSuperview(_ view : ConstraintView?) -> ConstraintView? {
-        var closestCommonSuperview: ConstraintView?
-        var secondViewSuperview: ConstraintView? = view
-        while closestCommonSuperview == nil && secondViewSuperview != nil {
-            var firstViewSuperview: ConstraintView? = self
-            while closestCommonSuperview == nil && firstViewSuperview != nil {
-                if secondViewSuperview == firstViewSuperview {
-                    closestCommonSuperview = secondViewSuperview
-                }
-                firstViewSuperview = firstViewSuperview?.superview
-            }
-            secondViewSuperview = secondViewSuperview?.superview
-        }
-        return closestCommonSuperview
-    }
-}
+//private extension ConstraintArrayDSL {
+//    func commonSuperviewOfViews() -> ConstraintView? {
+//        var commonSuperview : ConstraintView?
+//        var previousView : ConstraintView?
+//
+//        for view in self.array {
+//            if previousView != nil {
+//                commonSuperview = view.closestCommonSuperview(commonSuperview)
+//            }else {
+//                commonSuperview = view
+//            }
+//            previousView = view
+//        }
+//        return commonSuperview
+//    }
+//}
+//
+//private extension ConstraintView {
+//    func closestCommonSuperview(_ view : ConstraintView?) -> ConstraintView? {
+//        var closestCommonSuperview: ConstraintView?
+//        var secondViewSuperview: ConstraintView? = view
+//        while closestCommonSuperview == nil && secondViewSuperview != nil {
+//            var firstViewSuperview: ConstraintView? = self
+//            while closestCommonSuperview == nil && firstViewSuperview != nil {
+//                if secondViewSuperview == firstViewSuperview {
+//                    closestCommonSuperview = secondViewSuperview
+//                }
+//                firstViewSuperview = firstViewSuperview?.superview
+//            }
+//            secondViewSuperview = secondViewSuperview?.superview
+//        }
+//        return closestCommonSuperview
+//    }
+//}
