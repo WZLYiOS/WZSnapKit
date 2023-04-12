@@ -1,9 +1,9 @@
 PODS:
   - SnapKit (5.6.0)
-  - WZSnapKit (2.0.2):
+  - WZSnapKit (3.0.5):
     - SnapKit (~> 5.6.0)
-    - WZSnapKit/Source (= 2.0.2)
-  - WZSnapKit/Source (2.0.2):
+    - WZSnapKit/Source (= 3.0.5)
+  - WZSnapKit/Source (3.0.5):
     - SnapKit (~> 5.6.0)
 
 DEPENDENCIES:
@@ -19,7 +19,7 @@ EXTERNAL SOURCES:
 
 SPEC CHECKSUMS:
   SnapKit: e01d52ebb8ddbc333eefe2132acf85c8227d9c25
-  WZSnapKit: df75abb5366e5a4f977a6331f0db56a9b80adfda
+  WZSnapKit: d83bf50bb2a6e09e7bbdcd26689b74caec3d331d
 
 PODFILE CHECKSUM: 433ff034feb702ac3196553de0f04d24cba7e360
 
