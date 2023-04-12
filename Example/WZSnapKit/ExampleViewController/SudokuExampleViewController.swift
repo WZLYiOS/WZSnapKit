@@ -46,7 +46,7 @@ class SudokuExampleViewController: UIViewController {
         }
         
         var views: [UIView] = []
-        for _ in 0..<4{
+        for _ in 0..<5{
             let view = UIView()
             view.backgroundColor = .green
             container.addSubview(view)

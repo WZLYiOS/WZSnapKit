@@ -243,14 +243,14 @@ public struct ConstraintArrayDSL {
                     if currentRow != 0 && i - columnCount >= 0 {
                         make.top.equalTo(self.array[i-columnCount].snp.bottom).offset(verticalSpacing)
                     }
-                    
-                    if itemHeight != nil {
-                        make.bottom.lessThanOrEqualTo(tempSuperview).offset(-edgeInset.bottom)
-                    }
-                    else {
-                        make.bottom.equalTo(tempSuperview).offset(-edgeInset.bottom)
+                    if i == self.array.count - 1 {
+                        make.bottom.equalToSuperview().offset(-edgeInset.bottom)
+                    }else{
+                        make.bottom.lessThanOrEqualToSuperview().offset(-edgeInset.bottom)
                     }
                 }
+                
+                
                 
                 if currentRow != 0 && currentRow != rowCount - 1 {//other row
                     make.top.equalTo(self.array[i-columnCount].snp.bottom).offset(verticalSpacing);
