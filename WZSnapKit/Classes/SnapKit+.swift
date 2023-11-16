@@ -173,8 +173,8 @@ public struct ConstraintArrayDSL {
                 
                 let tmpTarget = topConstrainView != nil ? topConstrainView!.snp.bottom : tempSuperview.snp.top
                 make.top.equalTo(tmpTarget).offset(edgeInset.top)
-                make.left.equalTo(tempSuperview).offset(edgeInset.left)
-                make.right.lessThanOrEqualTo(tempSuperview).offset(-edgeInset.right)
+                make.leading.equalTo(tempSuperview).offset(edgeInset.left)
+                make.trailing.lessThanOrEqualTo(tempSuperview).offset(-edgeInset.right)
                 make.bottom.lessThanOrEqualTo(tempSuperview).offset(-edgeInset.bottom)
             })
             
@@ -185,8 +185,8 @@ public struct ConstraintArrayDSL {
                     }
                     
                     make.top.equalTo(preView)
-                    make.left.equalTo(preView.snp.right).offset(fixedItemSpacing)
-                    make.right.lessThanOrEqualTo(tempSuperview).offset(-edgeInset.right)
+                    make.leading.equalTo(preView.snp.trailing).offset(fixedItemSpacing)
+                    make.trailing.lessThanOrEqualTo(tempSuperview).offset(-edgeInset.right)
                     make.bottom.lessThanOrEqualTo(tempSuperview).offset(-edgeInset.bottom)
                 })
             }
