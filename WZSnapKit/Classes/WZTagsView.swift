@@ -30,6 +30,15 @@ open class WZTagsView: UIView {
     /// 内容边距
     public var edgeInset: UIEdgeInsets = UIEdgeInsets.zero
     
+    public override init(frame: CGRect) {
+        super.init(frame: frame)
+        translatesAutoresizingMaskIntoConstraints = false
+    }
+    
+    required public init?(coder: NSCoder) {
+        fatalError("init(coder:) has not been implemented")
+    }
+    
     /// 添加视图
     public func addSubviews(_ views: [UIView]) {
         subviews.forEach{ $0.removeFromSuperview() }
@@ -47,10 +56,17 @@ open class WZTagsView: UIView {
                                            edgeInset: edgeInset,
                                            fixedItemLength: fixedItemLength)
         case let .distributeDetermineWidthViews(verticalSpacing, horizontalSpacing, maxWidth, itemHeight):
+            let determineWidths = views.map { item in
+                if item.frame.size.width > 0 {
+                    return item.frame.size.width
+                }else{
+                    return item.systemLayoutSizeFitting(UIView.layoutFittingCompressedSize).width
+                }
+            }
             views.snp.distributeDetermineWidthViews(verticalSpacing: verticalSpacing,
                                                     horizontalSpacing: horizontalSpacing,
                                                     maxWidth: maxWidth,
-                                                    determineWidths: views.map({$0.frame.size.width}),
+                                                    determineWidths: determineWidths,
                                                     itemHeight: itemHeight,
                                                     edgeInset: edgeInset)
         }

@@ -97,20 +97,20 @@ public struct ConstraintArrayDSL {
                 if prev == nil { // the first one
                     let tmpTarget = topConstrainView != nil ? topConstrainView!.snp.bottom : tempSuperview.snp.top
                     make.top.equalTo(tmpTarget).offset(edgeInset.top)
-                    make.left.equalTo(tempSuperview).offset(edgeInset.left)
+                    make.leading.equalTo(tempSuperview).offset(edgeInset.left)
                     vMinX = curWidth + horizontalSpacing
                 }
                 else {
-                    make.right.lessThanOrEqualToSuperview().offset(-edgeInset.right)
+                    make.trailing.lessThanOrEqualToSuperview().offset(-edgeInset.right).priority(.low)
                     
                     if vMinX + curWidth > maxW {
                         make.top.equalTo(prev!.snp.bottom).offset(verticalSpacing)
-                        make.left.equalTo(tempSuperview).offset(edgeInset.left)
+                        make.leading.equalTo(tempSuperview).offset(edgeInset.left)
                         vMinX = curWidth + horizontalSpacing
                     }
                     else {
                         make.top.equalTo(prev!)
-                        make.left.equalTo(prev!.snp.right).offset(horizontalSpacing)
+                        make.leading.equalTo(prev!.snp.trailing).offset(horizontalSpacing)
                         vMinX += curWidth + horizontalSpacing
                     }
                 }
